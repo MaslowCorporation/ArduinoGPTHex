@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lanouvelleecole/ArduinoGPTHex.git"
+    "url": "git+https://github.com/MaslowCorporation/ArduinoGPTHex.git"
   },
   "keywords": [
     "Arduino",
@@ -24,9 +24,9 @@
   "author": "JEAN LOUIS DONAT",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lanouvelleecole/ArduinoGPTHex/issues"
+    "url": "https://github.com/MaslowCorporation/ArduinoGPTHex/issues"
   },
-  "homepage": "https://github.com/lanouvelleecole/ArduinoGPTHex#readme",
+  "homepage": "https://github.com/MaslowCorporation/ArduinoGPTHex#readme",
   "devDependencies": {
     "rimraf": "^5.0.1"
   }
