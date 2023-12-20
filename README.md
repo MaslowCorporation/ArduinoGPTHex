@@ -1,4 +1,4 @@
-# ArduinoGPTHex
+# ArduinoGPTHex 🌎
 
 This is the last baby in the Maslow ecosystem.
 
