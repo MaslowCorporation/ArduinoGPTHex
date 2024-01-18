@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "reset-main-branch": "git checkout --orphan latest_branch && git add -A && git commit -am \"First commit ;-)\" && git branch -D main && git branch -m main && git push -f --set-upstream origin main",
-    "push": "(git checkout main && git add . && git commit -m \"I'm a bigger pusher than Ice-T homie !!!\" && git push) || exit 0",
+    "push": "(git add . && git commit -m \"I'm a bigger pusher than Ice-T homie !!!\" && git push) || exit 0",
 
     
     "first-push": "npm run git-init && git add . && git commit -m \"first commit\" && git branch -M main && git remote add origin https://github.com/MaslowCorporation/ArduinoGPTHex.git && git push -u origin main",
