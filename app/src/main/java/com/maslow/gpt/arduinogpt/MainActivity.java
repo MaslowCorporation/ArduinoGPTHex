@@ -16,7 +16,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private UsbConnectState usbStatus;
+
+    private Spinner spinnerBoard;
 
     private final BroadcastReceiver mUsbNotifyReceiver = new BroadcastReceiver() {
         @Override
@@ -229,6 +233,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         fab.show();
+
+        spinnerBoard = findViewById(R.id.spinner_board);
+        ArrayAdapter<Boards> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Boards.values());
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerBoard.setAdapter(spinnerAdapter);
     }
 
     private void HandleDeepLink() {
@@ -305,7 +314,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void uploadHex() {
 
-        Boards board = Boards.ARDUINO_UNO;
+        Boards board = (Boards) spinnerBoard.getSelectedItem();
 
         Arduino arduinoBoard = new Arduino(board.name, board.chipType, board.uploadBaudrate, board.uploadProtocol);
 
