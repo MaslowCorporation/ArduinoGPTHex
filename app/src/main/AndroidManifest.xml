@@ -20,6 +20,7 @@
             android:name="com.maslow.gpt.arduinogpt.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
+            android:exported="false"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

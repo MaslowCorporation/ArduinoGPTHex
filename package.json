@@ -26,7 +26,9 @@
     "copy-aab-release-linux": "cp ./app/build/outputs/bundle/release/app-release.aab ~/Desktop",
     "copy-aab-release-macos": "cp ./app/build/outputs/bundle/release/app-release.aab ~/Desktop",
     "build-android-release": "npm run clean-android-resources && gradlew assembleRelease",
-    "build-android-release-aab": "npm run clean-android-resources && gradlew bundleRelease"
+    "build-android-debug": "npm run clean-android-resources && gradlew assembleDebug",
+    "build-android-release-aab": "npm run clean-android-resources && gradlew bundleRelease",
+    "adb-connect": "adb tcpip 57391 && adb connect 100.108.106.94:57391"
   },
   "repository": {
     "type": "git",
