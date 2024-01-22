@@ -260,13 +260,13 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(this, "Hex file creation failed....", Toast.LENGTH_LONG).show();
                     }
                 } else {
-                    Toast.makeText(this, "No hex data was given to the app. Please Use MaslowGPT or ArduinOGPT to feed to hungry app.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "No hex data was given to the app. Please Use the Maslow or ArduinoGPT Android apps, to feed this hungry app.", Toast.LENGTH_LONG).show();
                 }
             } else {
-                Toast.makeText(this, "No hex data was given to the app. Please Use MaslowGPT or ArduinOGPT to feed to hungry app.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "No hex data was given to the app. Please Use the Maslow or ArduinoGPT Android apps, to feed this hungry app.", Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(this, "No hex data was given to the app. Please Use MaslowGPT or ArduinOGPT to feed to hungry app.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "No hex data was given to the app. Please Use the Maslow or ArduinoGPT Android apps, to feed this hungry app.", Toast.LENGTH_LONG).show();
         }
     }
 
