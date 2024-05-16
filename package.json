@@ -1,0 +1,56 @@
+{
+  "name": "arduinogpthex",
+  "version": "1.0.0",
+  "description": "A Arduino Hex Uploader for Android devices, via USB OTG",
+  "main": "index.js",
+  "scripts": {
+    "reset-main-branch": "git checkout --orphan latest_branch && git add -A && git commit -am \"First commit ;-)\" && git branch -D main && git branch -m main && git push -f --set-upstream origin main",
+    "push": "(git add . && git commit -m \"I'm a bigger pusher than Ice-T homie !!!\" && git push) || exit 0",
+
+    
+    "first-push": "npm run git-init && git add . && git commit -m \"first commit\" && git branch -M main && git remote add origin https://github.com/MaslowCorporation/ArduinoGPTHex.git && git push -u origin main",
+    "git-init": "rimraf .git && git init",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean-android-resources": "rimraf app/src/main/res/raw app/src/main/res/drawable-hdpi app/src/main/res/drawable-mdpi app/src/main/res/drawable-xhdpi app/src/main/res/drawable-xxhdpi app/src/main/res/drawable-xxxhdpi",
+    "del-sha-keys": "keytool -delete -v -alias androiddebugkey -keystore app/debug.keystore -storepass android",
+    "gen-sha-keys": "keytool -genkey -v -keystore app/debug.keystore -alias androiddebugkey -storepass android -keypass android -keyalg RSA -validity 14000",
+    "get-sha-keys": "keytool -list -v -keystore app/debug.keystore -alias androiddebugkey -storepass android",
+    "del-sha-keys-release": "keytool -delete -v -alias androidreleasekey -keystore app/release.keystore -storepass android",
+    "gen-sha-keys-release": "keytool -genkey -v -keystore app/release.keystore -alias androidreleasekey -storepass android -keypass android -keyalg RSA -validity 14000",
+    "get-sha-keys-release": "keytool -list -v -keystore app/release.keystore -alias androidreleasekey -storepass android",
+    "copy-apk-release-windows": "copy app\\build\\outputs\\apk\\release\\app-release.apk %USERPROFILE%\\Desktop",
+    "copy-apk-release-linux": "cp ./app/build/outputs/apk/release/app-release.apk ~/Desktop",
+    "copy-apk-release-macos": "cp ./app/build/outputs/apk/release/app-release.apk ~/Desktop",
+    "copy-apk-windows": "copy app\\build\\outputs\\apk\\debug\\app-debug.apk %USERPROFILE%\\Desktop",
+    "copy-apk-linux": "cp ./app/build/outputs/apk/debug/app-debug.apk ~/Desktop",
+    "copy-apk-macos": "cp ./app/build/outputs/apk/debug/app-debug.apk ~/Desktop",
+    "copy-aab-release-windows": "copy app\\build\\outputs\\bundle\\release\\app-release.aab %USERPROFILE%\\Desktop",
+    "copy-aab-release-linux": "cp ./app/build/outputs/bundle/release/app-release.aab ~/Desktop",
+    "copy-aab-release-macos": "cp ./app/build/outputs/bundle/release/app-release.aab ~/Desktop",
+    "build-android-release": "npm run clean-android-resources && gradlew assembleRelease",
+    "build-android-debug": "npm run clean-android-resources && gradlew assembleDebug",
+    "build-android-release-aab": "npm run clean-android-resources && gradlew bundleRelease",
+    "adb-connect": "adb tcpip 57391 && adb connect 100.108.106.94:57391"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaslowCorporation/ArduinoGPTHex.git"
+  },
+  "keywords": [
+    "Arduino",
+    "HEX",
+    "Upload",
+    "GPT",
+    "IDE",
+    "Android"
+  ],
+  "author": "JEAN LOUIS DONAT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaslowCorporation/ArduinoGPTHex/issues"
+  },
+  "homepage": "https://github.com/MaslowCorporation/ArduinoGPTHex#readme",
+  "devDependencies": {
+    "rimraf": "^5.0.1"
+  }
+}
