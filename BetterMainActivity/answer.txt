@@ -1,0 +1,27 @@
+To set the line of code `Boards board = Boards.ARDUINO_UNO;` from a dropdown menu, you can follow these steps:
+
+1. Add a Spinner component to your layout file (activity_main.xml) to create the dropdown menu. Give it an ID, such as `spinner_board`. Here's an example of how the Spinner can be defined:
+
+```xml
+<Spinner
+    android:id="@+id/spinner_board"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+```
+
+2. In your MainActivity class, declare a Spinner variable and initialize it in the `onCreate` method. Add the following code to the `onCreate` method after the line `fab.show();`:
+
+```java
+Spinner spinnerBoard = findViewById(R.id.spinner_board);
+ArrayAdapter<Boards> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Boards.values());
+spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+spinnerBoard.setAdapter(spinnerAdapter);
+```
+
+3. Modify the `uploadHex` method to retrieve the selected board from the Spinner and assign it to the `board` variable. Replace the line `Boards board = Boards.ARDUINO_UNO;` with the following code:
+
+```java
+Boards board = (Boards) spinnerBoard.getSelectedItem();
+```
+
+4. Run your application and verify that the dropdown menu is displayed correctly. Select a board from the dropdown menu, and when you click the FloatingActionButton, the `uploadHex` method will be called with the selected board.
