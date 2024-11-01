@@ -19,11 +19,12 @@ buildscript {
 
 allprojects {
     repositories {
+        jcenter()
         google()
         maven { url "https://www.jitpack.io" }
         maven { url 'https://jitpack.io' }
 
-        jcenter()
+
     }
 
     // Define versions in a single place
@@ -34,7 +35,7 @@ allprojects {
         minSdkVersion = 16
         targetSdkVersion = 31
 
-        usbSerialVersion = "6.1.0"
+        usbSerialVersion = "6.0.6"
         vumeterlibraryVersion = "1.0.17"
         sliderVersion = "2.0.4"
 
